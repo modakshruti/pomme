@@ -78,7 +78,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#eef1e9] text-[#18372f]">
       <div className="mx-auto min-h-screen max-w-md bg-[#fbfcf8] pb-28 shadow-2xl">
         <header className="flex items-center justify-between px-5 pb-4 pt-7">
-          <div><p className="text-[11px] font-bold uppercase tracking-[.18em] text-[#789087]">Steady · {sync}</p><h1 className="mt-1 text-2xl font-semibold">Your GLP-1 day</h1></div>
+          <div><p className="text-[11px] font-bold uppercase tracking-[.18em] text-[#789087]">Pomme · {sync}</p><h1 className="mt-1 text-2xl font-semibold">Get into a healthy rhythm</h1></div>
           <button onClick={() => setSheet('settings')} aria-label="Open settings" className="grid h-11 w-11 place-items-center rounded-full bg-[#deecdf] text-xl">⚙</button>
         </header>
 
@@ -114,7 +114,7 @@ export default function Home() {
         {tab === 'log' && <section className="px-5"><h2 className="text-xl font-semibold">Today’s food log</h2><div className="mt-4 space-y-3">{data.foods.length ? data.foods.map((f,i)=><div key={`${f.name}-${i}`} className="flex justify-between rounded-2xl border border-[#e0e7de] bg-white p-4"><div><strong className="text-sm">{f.name}</strong><p className="mt-1 text-xs text-[#778a83]">{f.protein}g protein</p></div><span className="text-sm font-semibold">{f.calories} kcal</span></div>) : <p className="rounded-3xl bg-white p-8 text-center text-sm text-[#778a83]">No foods logged yet.</p>}</div></section>}
         {tab === 'plan' && <section className="px-5"><h2 className="text-xl font-semibold">Your weekly plan</h2><div className="mt-4 rounded-3xl bg-[#173f34] p-5 text-white"><p className="text-sm text-white/65">Next dose</p><p className="mt-1 text-2xl font-semibold">{dose} mg · {doseDay}</p><button onClick={enableReminders} className="mt-5 rounded-xl bg-[#d9f28b] px-4 py-3 text-sm font-bold text-[#17352d]">Enable phone reminders</button></div><div className="mt-4 rounded-3xl border border-[#e0e7de] bg-white p-5"><h3 className="font-semibold">Safety note</h3><p className="mt-2 text-sm leading-6 text-[#657a72]">Record the dose exactly as prescribed. Do not use this app to change or calculate your dose. For severe or persistent symptoms, contact your clinician.</p></div></section>}
 
-        <p className="px-8 pt-7 text-center text-[11px] leading-5 text-[#819089]">Steady supports tracking and is not medical advice. Vitamin needs and medication changes should be reviewed with your clinician or pharmacist.</p>
+        <p className="px-8 pt-7 text-center text-[11px] leading-5 text-[#819089]">Pomme supports tracking and is not medical advice. Vitamin needs and medication changes should be reviewed with your clinician or pharmacist.</p>
         <nav className="fixed bottom-0 left-1/2 z-20 flex w-full max-w-md -translate-x-1/2 justify-around border-t border-[#dfe6dc] bg-[#fbfcf8]/95 px-5 pb-[max(14px,env(safe-area-inset-bottom))] pt-3 backdrop-blur">{([['today','⌂','Today'],['log','≡','Food log'],['plan','♡','Plan']] as const).map(([id,icon,label])=><button key={id} onClick={()=>setTab(id)} className={`min-w-20 text-center ${tab===id?'text-[#215744]':'text-[#8c9994]'}`}><span className="block text-xl">{icon}</span><span className="text-[11px] font-semibold">{label}</span></button>)}</nav>
       </div>
 
