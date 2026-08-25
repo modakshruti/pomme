@@ -7,6 +7,17 @@ const geist = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Pomme — Get into a healthy rhythm',
   description: 'A motivating daily companion for your GLP-1 routine.',
+  applicationName: 'Pomme',
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Pomme',
+  },
+  icons: {
+    icon: '/pomme-icon.svg',
+    apple: '/pomme-icon.svg',
+  },
   openGraph: {
     title: 'Pomme',
     description: 'Get into a healthy rhythm',
@@ -18,6 +29,13 @@ export const metadata: Metadata = {
     description: 'Get into a healthy rhythm',
     images: ['/og.png'],
   },
+};
+
+export const viewport = {
+  themeColor: '#f7f2e8',
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

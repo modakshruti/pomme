@@ -1,0 +1,18 @@
+{
+  "name": "Pomme — Get into a healthy rhythm",
+  "short_name": "Pomme",
+  "description": "A motivating daily companion for your GLP-1 routine.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f2e8",
+  "theme_color": "#f7f2e8",
+  "icons": [
+    {
+      "src": "/pomme-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
